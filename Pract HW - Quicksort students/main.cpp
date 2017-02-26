@@ -16,7 +16,7 @@ struct Student {
         //cout << "Enter " << i << " student's name: ";
         cin.getline(name, SIZE);
         //cout << "Enter " << name << "'s faculty number: ";
-        cin>>facultyNumber;
+        cin >> facultyNumber;
         //cout << "Enter " << name << "'s age: ";
         cin >> age;
         //cout << "Enter " << name << "'s grade: ";
@@ -43,14 +43,14 @@ void sortStudents(Student *students, int left, int right) {
         int index = left;
 
         for (int i = left; i < right; i++) {
-            if (students[i].grade > pivot.grade) {
+            //Sort by grade descending and then by facultyNumber ascending
+            if ((students[i].grade > pivot.grade) ||
+                (students[i].grade == pivot.grade && students[i].facultyNumber < pivot.facultyNumber)) {
+
                 Student stud = students[i];
                 students[i] = students[index];
                 students[index] = stud;
                 index++;
-            }
-            else if(students[i].grade == pivot.grade) {
-                if(students[i].grade == pivot.grade)
             }
         }
 
@@ -75,10 +75,10 @@ int main() {
         students[i] = stud;
     }
 
-    sortStudents(students, 0, n-1);
+    sortStudents(students, 0, n - 1);
 
     for (int i = 0; i < n; i++) {
-        students[i].output(i+1);
+        students[i].output(i + 1);
     }
 
     delete[] students;
