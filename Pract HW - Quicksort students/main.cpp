@@ -34,11 +34,7 @@ struct Student {
 
 void sortStudents(Student *students, int left, int right) {
     if (left < right) {
-        int middle = left + right / 2;
-        Student pivot = students[middle];
-
-        students[middle] = students[right];
-        students[right] = pivot;
+        Student pivot = students[right];
 
         int index = left;
 
