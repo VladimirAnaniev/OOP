@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Monster::Monster(char* name, int age, int att, int def) {
+Monster::Monster(char *name, int age, int att, int def) {
     this->name = nullptr;
     setName(name);
     setAge(age);
@@ -12,13 +12,12 @@ Monster::Monster(char* name, int age, int att, int def) {
     setDefence(def);
 }
 
-Monster::~Monster()
-{
+Monster::~Monster() {
     delete this->name;
 }
 
-void Monster::setName(const char* name) {
-    if(this->name != nullptr) delete this->name;
+void Monster::setName(const char *name) {
+    if (this->name != nullptr) delete this->name;
     this->name = new char[strlen(name) + 1];
     strcpy(this->name, name);
 };
