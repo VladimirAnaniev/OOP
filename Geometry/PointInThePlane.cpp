@@ -77,7 +77,8 @@ void PointInThePlane::print() const {
 }
 
 double PointInThePlane::distance(PointInThePlane p) const {
-    p.translate(*this);
+    p.translateX(-getX());
+    p.translateY(-getY());
     return p.radius();
 }
 
