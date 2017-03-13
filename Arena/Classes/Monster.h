@@ -7,7 +7,9 @@ class Monster {
 
 public:
     /* Constructor and Destructor*/
-    Monster(char *name = "", int age = 0, int att = 0, int def = 0);
+    Monster(const char *name = "", int age = 0, int att = 0, int def = 0);
+
+    Monster(const Monster &monster);
 
     ~Monster();
 
@@ -31,6 +33,10 @@ public:
 
     /* Output */
     void print() const;
+
+    /* Operators */
+
+    Monster& operator= (const Monster& monster);
 };
 
 

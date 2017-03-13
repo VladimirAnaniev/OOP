@@ -41,9 +41,7 @@ void Planet::setCoordinates(int x, int y, int z) {
 }
 
 Planet::Planet(const Planet &planet) {
-    this->setName(planet.getName());
-    this->setCoordinates(planet.getCoordinates());
-    this->setDiameter(planet.getDiameter());
+	*this = planet;
 }
 
 Planet &Planet::operator=(const Planet &newPlanet) {
