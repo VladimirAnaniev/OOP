@@ -42,3 +42,21 @@ Monster& Monster::operator= (const Monster& monster) {
     }
     return *this;
 }
+
+void Monster::attack(Monster& opponent) {
+    if(opponent.isAlive()) {
+        opponent.setDefence(opponent.getDefence() - this->getAttack());
+        std::cout << this->.getName() << " deals " << this->.getAttack() << " damage. ";
+
+        if(opponent.getDefence() <= 0) {
+            opponent.setDefence(0);
+            std::cout << opponent.getName() << " has died. Horribly" << std::endl;
+        }
+        else {
+            std::cout << opponent.getName() << " has " << opponent.getDefence() <<" defence left." << std::endl;
+        }
+    }
+    else {
+        std::cout << "You cannot attack a dead monster!" << std::endl;
+    }
+}

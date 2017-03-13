@@ -22,6 +22,8 @@ public:
 
     const char *getName() const { return this->name; };
 
+    bool isAlive() const {return this->getDeffence() > 0;}
+
     /* Setters */
     void setName(const char *name);
 
@@ -30,6 +32,8 @@ public:
     void setAttack(int attack) { this->att = attack; };
 
     void setDefence(int defence) { this->def = defence; };
+
+    void attack(Monster& opponent);
 
     /* Output */
     void print() const;
