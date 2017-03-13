@@ -3,44 +3,52 @@
 
 class Monster {
     char *name;
-    int age, att, def;
+    int age, att, def, health;
 
 public:
     /* Constructor and Destructor*/
-    Monster(const char *name = "", int age = 0, int att = 0, int def = 0);
+    Monster(const char *name = "", int age = 0, int att = 0, int def = 0, int health = 0);
 
     Monster(const Monster &monster);
 
     ~Monster();
 
     /* Getters */
-    int getAge() const { return this->age; };
+    int getAge() const { return this->age; }
 
-    int getAttack() const { return this->att; };
+    int getAttack() const { return this->att; }
 
-    int getDefence() const { return this->def; };
+    int getDefence() const { return this->def; }
 
-    const char *getName() const { return this->name; };
+    int getHealth() const { return this->health; }
 
-    bool isAlive() const {return this->getDeffence() > 0;}
+    const char *getName() const { return this->name; }
+
+    bool isAlive() const { return this->getHealth() > 0; }
 
     /* Setters */
     void setName(const char *name);
 
-    void setAge(int age) { this->age = age; };
+    void setAge(int age) { this->age = age; }
 
-    void setAttack(int attack) { this->att = attack; };
+    void setAttack(int attack) { this->att = attack; }
 
-    void setDefence(int defence) { this->def = defence; };
+    void setDefence(int defence) { this->def = defence; }
 
-    void attack(Monster& opponent);
+    void setHealth(int health) { this->health = health; }
+
+    int dealDamage(int dmg);
+
+    void fight(Monster &opponent);
+
+    void attack(Monster &opponent);
 
     /* Output */
     void print() const;
 
     /* Operators */
 
-    Monster& operator= (const Monster& monster);
+    Monster &operator=(const Monster &monster);
 };
 
 
