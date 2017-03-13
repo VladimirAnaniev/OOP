@@ -21,6 +21,5 @@ int main() {
     p = p2;
     p.print();
 
-
     return 0;
 }

@@ -78,3 +78,8 @@ void Planet::read() {
     this->setCoordinates(x, y, z);
     this->setDiameter(diameter);
 }
+
+bool Planet::isHabitable() const {
+    return this->hasWater() && this->getDistance() <= 1000 &&
+           this->getDiameter() >= 10 && this->getDiameter() <= 100;
+}

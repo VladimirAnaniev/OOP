@@ -5,6 +5,7 @@ class Planet {
     char *name;
     int coords[3];
     double diameter;
+    bool water;
 
 public:
     /* Constructors */
@@ -19,7 +20,7 @@ public:
     ~Planet();
 
     /* Accessors */
-    const char *getName() const {return this->name;}
+    const char *getName() const { return this->name; }
 
     int getX() const { return this->coords[0]; }
 
@@ -27,11 +28,15 @@ public:
 
     int getZ() const { return this->coords[2]; }
 
-    const int* getCoordinates() const {return this->coords;}
+    bool hasWater() const {return this->water;}
+
+    const int *getCoordinates() const { return this->coords; }
 
     double getDiameter() const { return this->diameter; }
 
     double getDistance() const;
+
+    bool isHabitable() const;
 
     void print() const; //Output
 
@@ -39,6 +44,7 @@ public:
     void setName(const char *name);
 
     void setCoordinates(int x, int y, int z);
+
     void setCoordinates(const int coords[3]);
 
     void setX(int x) { this->coords[0] = x; }
@@ -52,7 +58,7 @@ public:
     void read(); //Input
 
     /* Operations */
-    Planet& operator= (const Planet& newPlanet);
+    Planet &operator=(const Planet &newPlanet);
 };
 
 
