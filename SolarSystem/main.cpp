@@ -6,11 +6,11 @@ int main() {
 
     p.print();
 
-    p.setName("pedalpedal");
+    p.setName("Probbba");
 
     p.print();
 
-    Planet p2("Pedal2", 30, 40, 120, 123.56);
+    Planet p2("wot", 30, 40, 120, 123.56);
 
     std::cout << p2.getDistance() << std::endl;
 

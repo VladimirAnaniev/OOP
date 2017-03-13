@@ -8,7 +8,7 @@ class Planet {
 
 public:
     /* Constructors */
-    Planet(const char *name = "pedal", int x = 0, int y = 0, int z = 0, double diameter = 0);
+    Planet(const char *name = "Default", int x = 0, int y = 0, int z = 0, double diameter = 0);
 
     Planet(const char *name, const int coords[3], double diameter);
 
@@ -51,10 +51,8 @@ public:
 
     void read(); //Input
 
-
     /* Operations */
     Planet& operator= (const Planet& newPlanet);
-
 };
 
 
