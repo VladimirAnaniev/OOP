@@ -85,6 +85,39 @@ public:
     }
 };
 
+
+class Deck {
+    Card cards[52];
+
+public:
+    Deck() {
+        int i = 0;
+        for (int color = 0; color < 4; color++) {
+            for (int power = 0; power < 13; power++) {
+                this->cards[i++] = Card((CardColor) color, (CardValue) power);
+            }
+        }
+    }
+
+    Card getTopCard() { return this->cards[51]; }
+
+    Card getBottomCard() { return this->cards[0]; }
+
+    void shuffleCard(int index) {
+        int random = rand() % 52;
+
+        Card that = this->cards[index];
+        this->cards[index] = this->cards[random];
+        this->cards[random] = that;
+    }
+
+    void shuffleDeck() {
+        for (int i = 0; i < 52; i++) {
+            this->shuffleCard(i);
+        }
+    }
+};
+
 int main() {
     Card c;
     Card c2(club, two);
@@ -92,7 +125,7 @@ int main() {
     c.print();
     c2.print();
 
-    cout<<c.isEqual(c2)<<endl;
+    cout << c.isEqual(c2) << endl;
 
     return 0;
 }
