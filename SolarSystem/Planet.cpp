@@ -5,27 +5,24 @@
 #include "Planet.h"
 
 void Planet::setName(const char *name) {
-    if (this->name != NULL) delete this->name;
+    if (this->name != nullptr) delete[] this->name;
     this->name = new char[strlen(name) + 1];
     strcpy(this->name, name);
 }
 
-Planet::Planet(const char *name, int x, int y, int z, double diameter) {
-    this->name = NULL;
+Planet::Planet(const char *name, int x, int y, int z, double diameter) : name(nullptr), diameter(diameter) {
     this->setName(name);
     this->setCoordinates(x, y, z);
-    this->setDiameter(diameter);
 }
 
-Planet::Planet(const char *name, const int coords[3], double diameter) {
-    this->name = NULL;
+Planet::Planet(const char *name, const int coords[3], double diameter) : name(nullptr), diameter(diameter) {
     this->setName(name);
     this->setCoordinates(coords);
     this->setDiameter(diameter);
 }
 
 Planet::~Planet() {
-    delete this->name;
+    delete[] this->name;
 }
 
 double Planet::getDistance() const {
