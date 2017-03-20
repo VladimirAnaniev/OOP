@@ -3,19 +3,17 @@
 
 class Monster {
     char *name;
-    int age, att, def, health;
+    int att, def, health;
 
 public:
     /* Constructor and Destructor*/
-    Monster(const char *name = "", int age = 0, int att = 0, int def = 0, int health = 0);
+    Monster(const char *name = "", int att = 0, int def = 0, int health = 0);
 
     Monster(const Monster &monster);
 
     ~Monster();
 
     /* Getters */
-    int getAge() const { return this->age; }
-
     int getAttack() const { return this->att; }
 
     int getDefence() const { return this->def; }
@@ -29,8 +27,6 @@ public:
     /* Setters */
     void setName(const char *name);
 
-    void setAge(int age) { this->age = age; }
-
     void setAttack(int attack) { this->att = attack; }
 
     void setDefence(int defence) { this->def = defence; }
@@ -39,7 +35,7 @@ public:
 
     int dealDamage(int dmg);
 
-    void fight(Monster &opponent);
+    Monster &fight(Monster &opponent);
 
     void attack(Monster &opponent);
 
