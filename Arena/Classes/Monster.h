@@ -1,6 +1,8 @@
 #ifndef ARENA_MONSTER_H
 #define ARENA_MONSTER_H
 
+#include<iostream>
+
 class Monster {
     char *name;
     int att, def, health;
@@ -39,13 +41,12 @@ public:
 
     void attack(Monster &opponent);
 
-    /* Output */
-    void print() const;
-
     /* Operators */
 
     Monster &operator=(const Monster &monster);
 };
+
+std::ostream &operator<<(std::ostream &out, Monster &monster);
 
 
 #endif //ARENA_MONSTER_H

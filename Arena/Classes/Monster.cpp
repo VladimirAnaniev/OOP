@@ -16,20 +16,13 @@ Monster::Monster(const Monster &monster) {
 }
 
 Monster::~Monster() {
-    delete this->name;
+    delete[] this->name;
 }
 
 void Monster::setName(const char *name) {
     if (this->name != NULL) delete this->name;
     this->name = new char[strlen(name) + 1];
     strcpy(this->name, name);
-};
-
-void Monster::print() const {
-    std::cout << "Name: " << getName() << std::endl;
-    std::cout << "Health: " << getHealth() << std::endl;
-    std::cout << "Attack: " << getAttack() << std::endl;
-    std::cout << "Defence: " << getDefence() << std::endl;
 }
 
 Monster &Monster::operator=(const Monster &monster) {
@@ -59,10 +52,18 @@ int Monster::dealDamage(int dmg) {
 }
 
 Monster &Monster::fight(Monster &opponent) {
-    if(this->isAlive()) {
+    if (this->isAlive()) {
         this->attack(opponent);
         return opponent.fight(*this);
     }
     std::cout << "The winner is " << opponent.getName() << std::endl;
     return opponent;
+}
+
+std::ostream &operator<<(std::ostream &out, Monster &monster) {
+    out << "Name: " << monster.getName() << std::endl;
+    out << "Health: " << monster.getHealth() << std::endl;
+    out << "Attack: " << monster.getAttack() << std::endl;
+    out << "Defence: " << monster.getDefence() << std::endl;
+    return out;
 }
