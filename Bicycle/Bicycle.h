@@ -3,7 +3,6 @@
 
 #include "CyclePart.h"
 
-
 class Bicycle {
     char *brand;
     CyclePart *parts;

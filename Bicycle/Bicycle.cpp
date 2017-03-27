@@ -53,5 +53,28 @@ int Bicycle::getHighQualityParts() const {
 }
 
 bool Bicycle::isLessThan(const Bicycle &compare) const {
-    return this->getHighQualityParts()<compare.getHighQualityParts();
+    return this->getHighQualityParts() < compare.getHighQualityParts();
+}
+
+void Bicycle::addPart(CyclePart part) {
+    CyclePart *newArr = new CyclePart[this->partsCount + 1];
+    for (int i = 0; i < partsCount; i++) {
+        newArr[i] = this->parts[i];
+    }
+    this->parts[this->partsCount] = part;
+    delete[] this->parts;
+    this->parts = newArr;
+}
+
+void Bicycle::removePart(int index) {
+    if (index >= 0 && index < this->partsCount) {
+        CyclePart *newArr = new CyclePart[this->partsCount -1];
+        for (int i = 0, j = 0; i < partsCount; i++) {
+            if(i!=index) {
+                newArr[j++] = this->parts[i];
+            }
+        }
+        delete[] this->parts;
+        this->parts = newArr;
+    }
 }
