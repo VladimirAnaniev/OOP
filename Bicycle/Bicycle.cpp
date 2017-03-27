@@ -62,19 +62,24 @@ void Bicycle::addPart(CyclePart part) {
         newArr[i] = this->parts[i];
     }
     this->parts[this->partsCount] = part;
+
     delete[] this->parts;
+    this->partsCount++;
     this->parts = newArr;
 }
 
 void Bicycle::removePart(int index) {
     if (index >= 0 && index < this->partsCount) {
-        CyclePart *newArr = new CyclePart[this->partsCount -1];
+
+        CyclePart *newArr = new CyclePart[this->partsCount - 1];
         for (int i = 0, j = 0; i < partsCount; i++) {
             if(i!=index) {
                 newArr[j++] = this->parts[i];
             }
         }
+
         delete[] this->parts;
+        this->partsCount--;
         this->parts = newArr;
     }
 }
