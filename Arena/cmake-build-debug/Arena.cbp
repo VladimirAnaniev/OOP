@@ -80,10 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/vladimir/Programming/OOP/Arena/Classes/DynamicArray/DynamicArray.cpp">
+			<Option target="Arena"/>
+		</Unit>
+		<Unit filename="/home/vladimir/Programming/OOP/Arena/Classes/DynamicArray/DynamicArray.h">
+			<Option target="Arena"/>
+		</Unit>
 		<Unit filename="/home/vladimir/Programming/OOP/Arena/Classes/Monster.cpp">
 			<Option target="Arena"/>
 		</Unit>
 		<Unit filename="/home/vladimir/Programming/OOP/Arena/Classes/Monster.h">
+			<Option target="Arena"/>
+		</Unit>
+		<Unit filename="/home/vladimir/Programming/OOP/Arena/Classes/Tournament.cpp">
+			<Option target="Arena"/>
+		</Unit>
+		<Unit filename="/home/vladimir/Programming/OOP/Arena/Classes/Tournament.h">
 			<Option target="Arena"/>
 		</Unit>
 		<Unit filename="/home/vladimir/Programming/OOP/Arena/main.cpp">
