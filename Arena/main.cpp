@@ -1,20 +1,16 @@
 #include <iostream>
 #include "Classes/Monster.h"
-#include "Classes/DynamicArray/DynamicArray.h"
+#include "Classes/Queue/Queue.h"
 
 using namespace std;
-
-void testDynamicArr() {
-    DynamicArray<Monster> arr;
-}
 
 int main() {
 //    Monster m("ppp", 10, 1, 30);
 //    Monster m2("zzz", 2, 7, 50);
 //
-//    Monster winner = m2.fight(m);
+    //Monster winner = m2.fight(m);
 //
-//    cout<<winner;
+     // cout<<winner;
 ////
 ////    m = m;
 ////    m.print();
@@ -22,7 +18,6 @@ int main() {
 //    //m.print();
 //    //m2.print();
 
-    testDynamicArr();
 
     return 0;
 }

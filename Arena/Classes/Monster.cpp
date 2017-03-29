@@ -1,5 +1,4 @@
 #include "Monster.h"
-#include <iostream>
 #include <cstring>
 
 Monster::Monster(const char *name, int att, int def, int health) {
